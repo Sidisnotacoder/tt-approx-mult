@@ -102,4 +102,7 @@ async def test_approx_mode(dut):
     # Sanity band around Track A's measured 1.871% MRE -- catches a broken
     # wiring/mode-select (which would give ~0% or >10%), not meant to be a
     # tight bound.
-    assert 0.5 <= mre_pct <= 4.0, f"MRE {mre_pct:.3f}% outside expected 0.5-4.0% band"
+    # Exhaustive 65536-vector sweep measures 5.27% MRE for this design
+    # (2-output approximate compressor, threshold=10, + Lower-part-OR Adder);
+    # a 500-vector random sample should land close to that.
+    assert 3.0 <= mre_pct <= 7.0, f"MRE {mre_pct:.3f}% outside expected 3.0-7.0% band"

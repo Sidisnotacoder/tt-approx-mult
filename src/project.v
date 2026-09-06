@@ -41,13 +41,13 @@ module tt_um_sidisnotacoder_approx_mult (
   wire [15:0] product_exact;
   wire [15:0] product_approx;
 
-  dadda_multiplier_8x8 u_exact (
+  dadda_multiplier_8x8_true4to2 u_exact (
       .a(a_reg),
       .b(b_reg),
       .p(product_exact)
   );
 
-  dadda_multiplier_8x8_approx u_approx (
+  dadda_multiplier_8x8_approx_p2_t10_loa u_approx (
       .a(a_reg),
       .b(b_reg),
       .p(product_approx)
