@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: © 2026 Sid
+# SPDX-FileCopyrightText: © 2026 Siddharth Senthil Kumar, Shiven Singh
 # SPDX-License-Identifier: Apache-2.0
 
 import random

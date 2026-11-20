@@ -55,7 +55,24 @@ implements exactly this sequencing: it checks the exact-mode result is bit-exact
 corner cases plus ~200 random vectors, and reports the measured mean relative error for the approximate mode
 over ~500 random vectors (expected around 5%, matching the exhaustive 65,536-vector sweep result).
 
+The phase counter is free-running from reset, so the host keeps track of the phase by counting clocks after
+releasing `rst_n` (the first rising edge after reset is phase 0). **Important:** `uio[0]` is an input only
+during phase 0. In phase 3 the chip drives all eight `uio` pins, so the host must stop driving `uio[0]`
+(tri-state it) after phase 0 to avoid bus contention.
+
 ## External hardware
 
 None -- this project only needs the standard TinyTapeout PMOD/QSPI test harness to drive `ui_in`/`uio_in`
 and observe `uo_out`/`uio_out`.
+
+## Authors
+
+- Siddharth Senthil Kumar, Department of Electronics and Communication Engineering, RV College of Engineering
+- Shiven Singh, Department of Electronics and Telecommunication Engineering, RV College of Engineering
+- Guided by Shylashree N, RV College of Engineering
+
+## Credits
+
+We gratefully acknowledge the Center of Excellence (CoE) in Integrated Circuits and Systems (ICAS) and the Department of Electronics and Communication Engineering (ECE) for providing the necessary resources and guidance.
+
+Special thanks to Dr. H V Ravish Aradhya (HoD - ECE), Dr. K R Usha Rani (Associate Dean - PG), Dr. K. S. Geetha (Vice Principal) and Dr. K. N. Subramanya (Principal) for their constant encouragement and support in facilitating this Tiny Tapeout SKY26E submission.

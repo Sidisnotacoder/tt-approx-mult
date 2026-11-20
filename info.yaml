@@ -1,7 +1,7 @@
 # Tiny Tapeout project information
 project:
   title:        "Approximate vs. Exact 8x8 Multiplier"      # Project title
-  author:       "Sid"      # Your name
+  author:       "Siddharth Senthil Kumar, Shiven Singh, Shylashree N, RV College of Engineering"      # Your name
   discord:      ""      # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
   description:  "8x8 Dadda multiplier: mode-selectable exact (true 4:2 compressor) or approximate (2-output compressor + LOA) core"      # One line description of what your project does
   language:     "Verilog" # other examples include SystemVerilog, Amaranth, VHDL, etc
